@@ -1,0 +1,647 @@
+/*general css for all webpages*/
+.grid-container {
+  display: grid;
+  grid-template-columns: auto auto auto;
+  grid-template-areas:
+  'header header header'
+  'nav nav nav'
+  'main main main'
+  'footer footer footer';
+}
+
+body, div, section, nav, main {
+	margin:0px;
+	font-family: Helvetica, Calibri, Arial, sans-seri;
+}
+
+/*remove the underline style in hyperlink*/
+a:link {
+  text-decoration: none;
+}
+
+/*make the scroll invisible*/
+::-webkit-Scrollbar{
+	width:0px;
+}
+
+/* header part*/
+header {
+	grid-area: header;
+	height:100%;
+}
+
+.logo {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Centers logo horizontally */
+}
+
+.logo img{
+	width:13%;
+    max-height: 100%; /*edit the size of the logo*/
+}
+
+/* social media icons */
+#socialmedia_container {
+	float:right;/*place social media icon to the right*/
+	width:150px;
+	height:5px;
+}
+
+.socialmedia_icon img{
+	float:right;
+	max-width: calc(40%/3);
+    max-height: 100%;
+    margin-right:20px;
+    opacity: 0.7;/*edit the logo appearance and alignment*/
+}
+
+.socialmedia_container::after {
+  content: "";
+  clear: both;
+}
+
+/* main section of page */
+main{
+	grid-area: main;
+	overflow-y: scroll;
+	color:white;
+    position: relative;
+	width:100%;
+	margin: auto;
+    min-height: 160vh;
+	}
+
+/* main: Home.HTML*/
+.TakeActionNow_container, .AboutUs_container, .WhyCleanup_container{
+    position: relative;
+}
+
+.TakeActionNow_container img, .AboutUs_container img, .WhyCleanup_container img{
+    display: flex;
+    width: 100%;
+    height: 100%;/* fit image to the browser window*/
+}
+
+.TakeActionNow_text{
+  font-size: 3.9vw;
+  font-weight: bold;
+  position: absolute; /* stick text on image*/
+  bottom: 45%;
+  left: 3.5%;
+}
+
+.AboutUs_text {
+    font-size: 3.9vw;
+    text-align: right;
+    font-weight: bold;
+    position:absolute;  /*stick text on image*/
+    padding-left: 60%;
+    padding-right: 6%;
+    bottom:33%;
+    color: white;
+}
+
+.btn{
+  font-size: 2.3vw;
+  background-color: rgb(0,143,255);/*dark blue*/
+  font-weight: bold;
+  color: white;
+  position:absolute;/* stick button on image*/
+  border: none;
+  cursor: pointer;
+  border-radius: 18px;
+}
+#TakeActionNow_btn{
+  bottom: 26%;
+  left: 3.5%;
+  padding: 10px 20px;
+}
+
+#AboutUs_btn{
+  bottom: 20%;
+  left: 58%;
+  right: 6%;
+  padding: 9px 3px;
+}
+
+#WhyCleanup_btn{
+  bottom: 28%;
+  right: 50%;
+  padding: 9px 14px;
+}
+
+#Volunteer_btn{
+  padding: 9px 15px;
+  font-size: 1.7vw;
+  background-color: rgb(0,143,255);/*dark blue*/
+  font-weight: bold;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+#DIYCleanup_btn{
+  padding: 9px 8px;
+  font-size: 1.7vw;
+  background-color: rgb(0,143,255);/*dark blue*/
+  font-weight: bold;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+#Coporate_btn{
+  padding: 9px 8px;
+  font-size: 1.7vw;
+  background-color: rgb(0,143,255);/*dark blue*/
+  font-weight: bold;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+.btn:hover, #Volunteer_btn:hover, #DIYCleanup_btn:hover, #Coporate_btn:hover, #SubscribeNow_btn:hover, #subpage_btn:hover {
+  color: black;/* turn button text to black when hovered over*/
+}
+
+.AboutUs_container:before, .WhyCleanup_container:before{
+    content: "";
+    width: 100%;
+    right: 0;
+    top: -0.2%;
+    display: block;
+    position: absolute;
+    height: 10%;
+    transform: rotate(180deg);
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 500 150' preserveAspectRatio='none' style='height: 100%25; width: 100%25;'%3E%3Cpath d='M-6.49,49.83 C233.35,-153.45 180.86,334.03 505.36,66.61 L500.00,150.00 L0.00,150.00 Z' style='stroke: none; fill: %2332c1ff;'%3E%3C/path%3E%3C/svg%3E");
+}
+
+.TakeActionNow_container:after, .AboutUs_container:after, .WhyCleanup_container:after{
+    content: "";
+    width: 100%;
+    left: 0;
+    bottom: 0;
+    display: block;
+    position: absolute;
+    height: 10%;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 500 150' preserveAspectRatio='none' style='height: 100%25; width: 100%25;'%3E%3Cpath d='M-6.49,49.83 C233.35,-153.45 180.86,334.03 505.36,66.61 L500.00,150.00 L0.00,150.00 Z' style='stroke: none; fill: %2332c1ff;'%3E%3C/path%3E%3C/svg%3E");
+}
+
+.wave_container{
+    max-width: 100%;
+    position: relative;
+    display: flex;
+    padding-top: 12%;
+    padding-bottom: 12%;
+    background-color: #32c1ff;/*light blue*/
+}
+
+.wave_container h2{
+  font-size: 2.57vw;
+  text-align: center;
+  font-weight: bold;
+  position:absolute; /* stick text on image*/
+  top:15%;
+  padding-left: 12%;
+  padding-right: 12%;
+  line-height: 150%;
+}
+
+.CleanupTogether_container{
+    background-color: #32c1ff; /*light blue*/
+    max-width:100%;
+    position:relative;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    padding-right: 65px;
+    padding-left: 65px;
+    padding-bottom: 80px;
+}
+
+.CleanupTogether_container h2{
+  font-size: 3vw;
+  text-align: center;
+  align-content: center;
+  font-weight: bold;
+  position:absolute; /* stick text on image*/
+  top:10%;
+  line-height: 150%;  
+}
+
+*{
+  box-sizing: border-box;
+}
+
+#row{
+    padding-top: 20%;
+}
+.imagecolumn {
+  float: left;
+  width: 33.33%;
+  box-sizing: border-box;
+  padding: 4px;
+  display: inline-block;
+}
+
+.buttoncolumn {
+  float: left;
+  width: 33.33%;/*column width*/
+  background-color: rgb(0,143,255); /*dark blue*/
+  padding: 10px 10px; /*button background width*/
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  border-radius: 100px;
+}
+
+
+/* Clearfix (clear floats) */
+#row::after {
+  content: "";
+  clear: both;
+  display: table;
+  box-sizing: border-box;
+}
+
+/* main: AboutUs.HTML*/
+.banner{
+    position: relative;
+    display: flex;
+    justify-content: center;
+}
+
+.banner img{
+    width: 100%;
+    height: 100%;
+}
+
+.banner:after{
+    content: "";
+    width: 100%;
+    left: 0;
+    bottom: 0;
+    display: block;
+    position: absolute;
+    height: 10%;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 500 150' preserveAspectRatio='none' style='height: 100%25; width: 100%25;'%3E%3Cpath d='M-6.49,49.83 C233.35,-153.45 180.86,334.03 505.36,66.61 L500.00,150.00 L0.00,150.00 Z' style='stroke: none; fill: %2332c1ff;'%3E%3C/path%3E%3C/svg%3E");
+}
+
+.subpage_wave_container{
+    max-width: 100%;
+    padding-top: 6%;
+    padding-bottom: 13%;
+    background-color: #32c1ff;/*light blue*/
+}
+
+.subpage_wave_container h1{
+  font-size: 2.6vw;
+  text-align: justify;
+  font-weight: bold;
+  margin:0% 15% 0% 15%;
+  color: black;
+}
+
+.subpage_wave_container p.highlight {
+    border-style: none double;
+    margin: 3% 15% 3% 15%;
+    text-align: justify;
+    padding: 0px 5px 0px 5px;
+    color: black;
+}
+
+.subpage_wave_container p{
+  font-size: 1.6vw;
+  text-align: justify;
+  margin:3% 15% 3% 15%;
+  line-height: 160%;
+}
+
+ul.list {
+  list-style-type: square;
+  font-size: 1.6vw;
+  text-align: justify;
+  margin:3% 15% 3% 15%;
+  padding-left: 3%;
+  line-height: 160%;
+}
+
+#subpage_btn{
+  font-size: 2.1vw;
+  background-color: rgb(0,143,255);/*dark blue*/
+  font-weight: bold;
+  color: white;
+  margin:0% 15% 5% 15%;
+  padding: 6px 10px;
+  border: none;
+  cursor: pointer;
+  border-radius: 18px;
+}
+
+/* main: DIYCleanup.HTML*/
+/* The actual timeline (the vertical ruler) */
+.banner h2{
+    font-size: 4vw;
+    font-weight: bold;
+    position:absolute;
+    bottom:40%;
+    color: white;
+}
+
+.timeline {
+  position: relative;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* The actual timeline (the vertical ruler) */
+.timeline::after {
+  content: '';
+  position: absolute;
+  width: 6px;
+  background-color: rgb(0,143,255); /*dark blue*/
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  margin-left: -3px;
+}
+
+/* Container around content */
+.container {
+  padding: 10px 40px;
+  position: relative;
+  background-color: inherit;
+  width: 50%;
+}
+
+/* The circles on the timeline */
+.container::after {
+  content: '';
+  position: absolute;
+  width: 25px;
+  height: 25px;
+  right: -17px;
+  background-color: rgb(0,143,255);
+  border: 4px solid rgb(0,143,255); /*dark blue*/;
+  top: 15px;
+  border-radius: 50%;
+  z-index: 1;
+}
+
+/* Place the container to the left */
+.left {
+  left: 0;
+}
+
+/* Place the container to the right */
+.right {
+  left: 50%;
+}
+
+/* Add arrows to the left container (pointing right) */
+.left::before {
+  content: " ";
+  height: 0;
+  position: absolute;
+  top: 22px;
+  width: 0;
+  z-index: 1;
+  right: 30px;
+  border: medium solid rgb(0,143,255);
+  border-width: 10px 0 10px 10px;
+  border-color: transparent transparent transparent rgb(0,143,255);
+}
+
+/* Add arrows to the right container (pointing left) */
+.right::before {
+  content: " ";
+  height: 0;
+  position: absolute;
+  top: 22px;
+  width: 0;
+  z-index: 1;
+  left: 30px;
+  border: medium solid rgb(0,143,255);
+  border-width: 10px 10px 10px 0;
+  border-color: transparent rgb(0,143,255) transparent transparent;
+}
+
+/* Fix the circle for containers on the right side */
+.right::after {
+  left: -16px;
+}
+
+/* The actual content */
+.content {
+  padding: 20px 0px;
+  background-color: rgb(0,143,255); /*dark blue*/
+  position: relative;
+  border-radius: 6px;
+}
+
+.content h2{
+  font-size: 2vw;
+  text-align: left;
+  font-weight: bold;
+  margin:0% 10% 0% 10%;
+  color: white;
+}
+
+.content p{
+  font-size: 1.6vw;
+  text-align: left;
+  margin:3% 10% 3% 10%;
+  line-height: 130%;
+}
+
+#content_btn{
+    padding: 0px 10px;
+    margin: 0% 10% 0% 10%;
+    top: 80%;
+    background-color: white;
+    color: rgb(0,143,255); /*dark blue*/
+    font-size: 1.8vw;
+    border-radius: 0px;
+    position: relative;
+}
+
+/* main: CorporateCleanup.HTML*/
+/*attach youtube video*/
+iframe{
+    margin: 0% 15% 0% 15%;
+    width:70%;
+    height:40vw;
+}
+
+/* main: SubscribeNow.HTML*/
+.subpage_wave_container label {
+  font-size: 1.8vw;
+  text-align: center;
+  margin:0% 15% 0% 15%;
+  color: black;
+}
+
+input[type=text] {
+  width: 53%;
+  padding: 10px 10px;
+  margin:3% 15% 3% 15%;
+  box-sizing: border-box;
+  border: 2px solid black;
+  border-radius: 4px;
+  align-content: center;
+}
+
+input[type=submit] {
+  width: 18%;
+  padding: 8px 2px;
+  margin:3% 5% 3% 15%;
+  box-sizing: border-box;
+  border: none;
+  font-size: 1.8vw;
+  border-radius: 4px;
+  background-color:rgb(0,143,255); /*dark blue*/
+  color:white;
+}
+
+/* footer lists */
+footer {
+	grid-area: footer;
+    background-color: rgb(0,143,255); /*dark blue*/
+    margin-top:auto;
+}
+
+.subscribe_now{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.AllRightsReserved{
+    bottom:50%;
+}
+
+#SubscribeNow_btn{
+    padding: 0px 10px;
+    top: 80%;
+    background-color: white;
+    color: rgb(0,143,255); /*dark blue*/
+    font-size: 1.8vw;
+    border-radius: 0px;
+}
+
+.subscribe_now h2{ 
+    font-size: 1.9vw;
+    font-weight: 40;
+    padding-left: 120px;
+    padding-right: 120px;
+    text-align: center;
+}
+
+.AllRightsReserved h2{
+    font-size: 1.8vw;
+    font-weight: 20;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 2px;
+    text-align: center;
+}
+
+/*Destop size- keep display nav bar*/
+@media only screen and (min-width: 571px){
+    nav {
+      grid-area: nav;
+      background-color: rgb(255,255,255);
+      text-align: center;
+      width:100%;
+	  height:100%;
+   }
+    
+    .menu label{
+        display:none;
+    }
+    
+    #toggle{
+        display:none;
+    }
+    
+    #menucontent{
+        margin:0;
+        padding: 0px;
+        text-align: center;
+    }
+    
+    #menucontent a{
+        margin:0px;
+	    height:16px;
+        font-weight: bold;
+	    font-size:1em;
+	    color:black;
+        display: inline;
+        letter-spacing: .08rem;
+        padding: 10px;
+    }
+    
+    #menucontent a:hover {
+        color: rgb(0,143,255);/*dark blue*/
+    }
+}
+
+/*mobile size- shrink nav to a side menu*/
+@media screen and (max-width: 730px) {
+  nav {
+      grid-area: nav;
+      background-color: rgba(0);
+      text-align: center;
+      width:100%;
+   }
+    
+    .menu label {
+        display:flex;
+        cursor:pointer;
+        font-size: 20px;
+        color:black;
+        margin-left: 20px;
+    }
+    
+    #toggle{
+        display:none;
+    }
+    
+    .menu{
+        position: relative;
+    }
+    
+    #menucontent{
+        display: none;
+        position: absolute;
+        background-color: #f9f9f9;
+        min-width: 160px;
+        box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+        z-index: 1;
+    }
+    
+    #menucontent a{
+        margin:0px;
+	    height:16px;
+        font-weight: bold;
+	    font-size:0.5em;
+	    color:black;
+        letter-spacing: .08rem;
+        padding: 12px 16px;
+        text-decoration: none;
+        display: block;
+        text-align: left;
+        padding-bottom: 20px;
+    }
+    
+    #menucontent a:hover {
+        color: rgb(0,143,255);/*dark blue*/
+    }
+    
+    #toggle:checked + #menucontent{
+        display:block;
+    }
+}
